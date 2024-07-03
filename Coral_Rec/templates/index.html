@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coral Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Coraldex</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="{{ url_for('recommendation') }}">Get Coral Recommendation</a></li>
+                <li><a href="{{ url_for('coral_info') }}">Coral Information</a></li>
+                <li><a href="add_coral.html">Add Coral</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>About</h2>
+        <p>There are over 6,000 species of coral around the world. Many of them are already a part of the reef-keeping hobby, while others remain a mystery. 
+            From hobbyists that have kept coral for decades to those planning on getting their first tank, we can all learn about new corals. 
+            This website serves as a tool to help plan, visualize, and research new corals that may be great additions to your aquarium. 
+            With a growing, curated list of many coral species as well as details about their care requirements, this site hopes to inspire hobbyists to try new things.</p>
+
+            <div class="image-container">
+                <div class="column">
+                    <img src="../static/images/image1.jpg" alt="Image 1">
+                </div>
+                <div class="column">
+                    <img src="../static/images/image2.jpg" alt="Image 2">
+                </div>
+                <div class="column">
+                    <img src="../static/images/image3.jpg" alt="Image 3">
+                </div>
+            </div>
+    </section>
+
+    <!-- Add more sections as needed -->
+
+    <footer>
+        <p>&copy; 2024 Coral Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Corals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            max-width: 800px; /* Limit width for better readability */
+            margin: auto; /* Center content horizontally */
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+        }
+
+        h1 {
+            color: #007bff; /* Blue header text */
+            text-align: center;
+            margin-bottom: 20px; /* Add some space below the header */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        li strong {
+            font-weight: bold;
+        }
+        h2 {
+            color: #000000; /* Black color for h2 */
+        }
+
+        ul li ul li {
+            color: #000000; /* Black color for text under h2 */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{{ url_for('recommendation') }}">Get Coral Recommendation</a></li>
+            <li><a href="{{ url_for('coral_info') }}">Coral Information</a></li>
+            <li><a href="add_coral.html">Add Coral</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+    <section>
+        <h1><u>Recommended Corals</u></h1>
+        <ul>
+            {% for coral in recommended_corals %}
+            <li>
+                <h2><strong>{{ coral['Scientific Name'] }}</strong>{{ coral['Common Names'] }}</h2>
+                <ul>
+                    <li><u>Specifications:</u></li>
+                    <li>Lighting: {{ coral['Light'] }}</li>
+                    <li>Current: {{ coral['Current'] }}</li>
+                    <li>Aggression: {{ coral['Aggression'] }}</li>
+                    <li>Growth: {{ coral['Growth'] }}</li>
+                    <li>Feeding: {{ coral['Food'] }}</li>
+                    <li>Difficulty: {{ coral['Difficulty'] }}</li>
+                    <li>Notes: {{ coral['Notes'] }}</li>
+                    <li>-------------------------------------------------------</li>
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 Coral Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

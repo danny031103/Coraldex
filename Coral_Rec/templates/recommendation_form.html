@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Coral Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #007bff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(5, 5, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: white;
+            color: #007bff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{{ url_for('recommendation') }}">Get Coral Recommendation</a></li>
+            <li><a href="{{ url_for('coral_info') }}">Coral Information</a></li>
+            <li><a href="add_coral.html">Add Coral</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+    <header>
+        <h1>Get Coral Recommendation</h1>
+    </header>
+    <section>
+        <form action="/recommendation" method="post">
+            <label for="expscore">Experience Level:</label>
+            <select name="expscore" id="expscore">
+                <option value="1">Beginner</option>
+                <option value="2">Intermediate</option>
+                <option value="3">Advanced</option>
+            </select><br>
+
+            <label for="feedscore">Feeding Preference:</label>
+            <select name="feedscore" id="feedscore">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select><br>
+
+            <label for="flow">Flow Preference:</label>
+            <select name="flow" id="flow">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select><br>
+
+            <label for="lightscore">Lighting Preference:</label>
+            <select name="lightscore" id="lightscore">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select><br>
+
+            <label for="typecoral">Coral Type Preference:</label>
+            <select name="typecoral" id="typecoral">
+                <option value="1">Softie</option>
+                <option value="2">LPS</option>
+                <option value="3">SPS</option>
+            </select><br>
+
+            <label for="aggressionscore">Aggression Preference:</label>
+            <select name="aggressionscore" id="aggressionscore">
+                <option value="1">Peaceful</option>
+                <option value="2">Medium</option>
+                <option value="3">Aggressive</option>
+            </select><br>
+
+            <input type="submit" value="Get Recommendation">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Coral Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

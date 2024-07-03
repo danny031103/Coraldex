@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coral Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #searchForm {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .coral-info {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{{ url_for('recommendation') }}">Get Coral Recommendation</a></li>
+            <li><a href="/coral_info">Coral Information</a></li>
+            <li><a href="add_coral.html">Add Coral</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Coral Information</h1>
+
+    <!-- Table start -->
+    <table>
+        <tr>
+            <th>CORAL TYPES</th>
+            <th>LIGHTING</th>
+            <th>CURRENT</th>
+            <th>AGGRESSION</th>
+            <th>GROWTH</th>
+            <th>FEEDING</th>
+            <th>DIFFICULTY</th>
+        </tr>
+        <tr>
+            <td>Large Polyp Stony(LPS)<br>Non-Photosynthetic(NPS)<br>Soft Coral(SC)<br>Polyps(P)<br>Hydrocoral(HC)<br>Small Polyp Stony(SPS)</td>
+            <td>L1: Low<br>L2: Low to Moderate<br>L3: Moderate<br>L4: Moderate to High<br>L5: High</td>
+            <td>C1: Slow<br>C2: Slow to Medium<br>C3: Medium<br>C4: Medium to Strong<br>C5: Strong</td>
+            <td>A1: None<br>A2: Low<br>A3: Moderate<br>A4: Moderate to High<br>A5: High</td>
+            <td>G1: Very Slow<br>G2: Slow<br>G3: Medium<br>G4: Fast<br>G5: Very Fast</td>
+            <td>F1: Micro<br>F2: Tiny<br>F3: Very Small<br>F4: Small<br>F5: Meaty</td>
+            <td>D1: Novice<br>D2: Easy<br>D3: Moderate<br>D4: Difficult<br>D5: Expert</td>
+        </tr>
+    </table>
+    <!-- Table end -->
+
+    <form id="searchForm">
+        <label for="coralName">Enter Coral Name:</label>
+        <input type="text" id="coralName" name="coralName">
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var coralName = document.getElementById('coralName').value;
+
+            fetch('/find_coral', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ coralName: coralName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = ''; // Clear previous results
+                data.forEach(coral => {
+                    var coralInfo = document.createElement('div');
+                    coralInfo.textContent = coral.join(' - ');
+                    coralInfo.classList.add('coral-info'); // Add CSS class
+                    resultsDiv.appendChild(coralInfo);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

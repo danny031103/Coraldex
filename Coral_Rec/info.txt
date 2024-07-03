@@ -1,0 +1,40 @@
+what your coral needs,,,,,,,,,,,,,,,,
+"To help maintain the best health and color of your corals, we have broken down their lighting, current flow, feeding needs, expected growth rate, and their difficulty to maintain in a reef tank. Also included is additional helpful information about how to successfully keep these animals over the long haul. The information presented here has been translated from its original German and other sources. All information presented is based on the experience of the original authors and may not be yours. It is presented as a simplified information source on commonly found corals in reefkeeping and marine aquariums to help new reefkeepers and aquarists learn and become successful.
+KEY to CORAL NEEDS TABLE
+(hover over individual key listing to view explanation)",,,,,,,,,,,,,,,,
+"CORAL TYPES
+SPS: Small Polyp Stony LPS: Large Polyp Stony NPS: Non Photosynthetic SC: Soft Corals
+P: Polyps HC:Hydrocorals
+Zoa: Zoanthids","LIGHTING
+L1: Low
+L2: Low to Moderate L3: Moderate
+L4: Moderate to High
+L5: High","CURRENT
+C1: Slow
+C2: Slow to Medium C3: Medium
+C4: Medium to Strong
+C5: Strong","AGGRESSION
+A1: None
+A2: Low
+A3: Moderate
+A4: Moderate to High
+A5: High",,,"GROWTH
+G1: Very Slow
+G2: Slow G3: Medium G4: Fast
+G5: Very Fast",,,"FEEDING
+F1: Micro
+F2: Tiny
+F3: Very Small
+F4: Small
+F5: Meaty",,"DIFFICULTY
+D1: Novice
+D2: Easy
+D3: Moderate D: Difficult
+D5: Expert",,,,,
+NEEDS by CORAL TYPE A B C D E F G H I J K L M N O P Q R S T U V W X Y Z,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+program goals:
+search function
+images
+website
+log your corals that you have and see if theyre compatible

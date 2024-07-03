@@ -1,0 +1,118 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #0f70ee;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #0f70ee;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #0f70ee;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+}
+
+/* Main content styles */
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #000000;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #000000;
+    color: #0f70ee;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+}
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center the images vertically */
+}
+
+.column {
+    flex: 1;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+}
+.column img {
+    width: 400px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+}
+#home {
+    text-align: center; /* Center-align the text within the section */
+}
+
+#home h2 {
+    margin-bottom: 20px; /* Add some spacing below the header */
+}
+
+#home p {
+    margin: 0 auto; /* Center-align the text and remove default margins */
+    max-width: 800px; /* Set a maximum width for the text */
+}
